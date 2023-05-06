@@ -2,10 +2,7 @@ package com.zerobase.cms.user.domain.model;
 
 
 import com.zerobase.cms.user.domain.SignUpForm;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.hibernate.envers.AuditOverride;
 
 import javax.persistence.*;
@@ -14,6 +11,7 @@ import java.time.LocalDateTime;
 
 @Entity
 @Getter
+@Setter
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
