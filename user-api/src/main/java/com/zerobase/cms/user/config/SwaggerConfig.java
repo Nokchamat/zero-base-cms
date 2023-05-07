@@ -16,7 +16,7 @@ public class SwaggerConfig {
     public Docket api() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.zerobase.cms.user.controller"))
+                .apis(RequestHandlerSelectors.basePackage("com.zerobase.cms.user"))
                 .paths(PathSelectors.any()) // 패턴 ex) "/read/**"
                 .build()
                 .apiInfo(apiInfo());
