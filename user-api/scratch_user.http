@@ -1,0 +1,45 @@
+### 회원가입 ( 고객 )
+POST http://localhost:8081/signup/customer
+Content-Type: application/json
+
+{
+  "birth": "1999-07-26",
+  "email": "rkdtjd976@gmail.com",
+  "name": "강성혁",
+  "password": "1234",
+  "phone": "01012341234"
+}
+
+### 이메일 인증 ( 고객 )
+GET http://localhost:8081/signup/customer/verify/?email=rkdtjd976@gmail.com&code=WF29NY5cK2
+
+### 로그인 ( 고객 )
+POST http://localhost:8081/signin/customer
+Content-Type: application/json
+
+{
+  "email": "rkdtjd976@gmail.com",
+  "password": "1234"
+}
+
+### 회원 정보 조회 ( 고객 )
+GET http://localhost:8081/customer/getInfo
+Content-Type: application/json
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJGTm1jTEZoaTBLQmpvd1FnOFl5M2VVclRqUlNOVlZPZ2J5eWdOeEdNMHpRPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiQ1VTVE9NRVIiLCJpYXQiOjE2ODM1MzQ4ODcsImV4cCI6MTY4MzYyMTI4N30.0BYblT41NiRx8cEXe9sJbs4JtKhL5vK1lAcW2o5fcSY
+
+### 잔액 변경 ( 고객 )
+POST http://localhost:8081/customer/balance
+Content-Type: application/json
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJGTm1jTEZoaTBLQmpvd1FnOFl5M2VVclRqUlNOVlZPZ2J5eWdOeEdNMHpRPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiQ1VTVE9NRVIiLCJpYXQiOjE2ODM1MzQ4ODcsImV4cCI6MTY4MzYyMTI4N30.0BYblT41NiRx8cEXe9sJbs4JtKhL5vK1lAcW2o5fcSY
+
+{
+  "from": "server",
+  "message": "잔액 충전",
+  "money": 50000
+}
+
+#############################
+
+### 회원가입 ( 셀러 )
+
+### 로그인 ( 셀러 )
