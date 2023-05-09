@@ -1,3 +1,5 @@
+import org.springframework.util.xml.SimpleTransformErrorListener
+
 plugins {
     id 'java'
     id 'org.springframework.boot' version '2.7.11'
@@ -23,9 +25,9 @@ repositories {
 dependencies {
     implementation project(path: ":zerobase-domain")
 
+    implementation 'org.springframework.boot:spring-boot-starter-data-jdbc'
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation 'org.springframework.boot:spring-boot-starter-web'
-    compileOnly 'org.projectlombok:lombok'
     runtimeOnly 'com.mysql:mysql-connector-j'
 
     //redis
@@ -43,6 +45,7 @@ dependencies {
 
     implementation 'org.springframework.cloud:spring-cloud-starter-openfeign'
 
+    compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
