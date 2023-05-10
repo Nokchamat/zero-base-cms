@@ -10,7 +10,9 @@ public enum ErrorCode {
 
     NOT_FOUND_PRODUCT(HttpStatus.BAD_REQUEST, "상품을 찾을 수 없습니다."),
     NOT_FOUND_ITEM(HttpStatus.BAD_REQUEST, "아이템을 찾을 수 없습니다."),
-    SAME_ITEM_NAME(HttpStatus.BAD_REQUEST, "아이템명이 중복입니다.")
+    SAME_ITEM_NAME(HttpStatus.BAD_REQUEST, "아이템명이 중복입니다."),
+    CART_CHANGE_NAME(HttpStatus.BAD_REQUEST, "장바구니에 추가할 수 없습니다."),
+    ITEM_COUNT_NOT_ENOUGH(HttpStatus.BAD_REQUEST, "상품에 수량이 부족합니다.")
 
 
     ;
