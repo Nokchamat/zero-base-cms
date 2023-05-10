@@ -39,8 +39,6 @@ public class JwtAuthenticationProvider {
         }
     }
 
-
-
     public UserVo getUserVo(String token) {
         Claims c = Jwts.parser().setSigningKey(secretKey).parseClaimsJws(token).getBody();
         return new UserVo(Long.valueOf(Objects.requireNonNull(Aes256Util.decrypt(c.getId()))), Aes256Util.decrypt(c.getSubject()));
