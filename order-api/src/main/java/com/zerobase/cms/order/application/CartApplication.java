@@ -58,6 +58,11 @@ public class CartApplication {
         // 2. 메시지를 보고 난 후에는, 이미 본 메시지는 제거한다.
     }
 
+    public Cart updateCart(Long customerId, Cart cart) {
+        cartService.putCart(customerId, cart);
+        return getCart(customerId);
+    }
+
     public void clearCart(Long customerId) {
         cartService.putCart(customerId, null);
     }
