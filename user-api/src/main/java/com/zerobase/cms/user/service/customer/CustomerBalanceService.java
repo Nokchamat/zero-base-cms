@@ -1,6 +1,7 @@
 package com.zerobase.cms.user.service.customer;
 
 import com.zerobase.cms.user.domain.customer.ChangeBalanceForm;
+import com.zerobase.cms.user.domain.model.Customer;
 import com.zerobase.cms.user.domain.model.CustomerBalanceHistory;
 import com.zerobase.cms.user.domain.repository.CustomerBalanceHistoryRepository;
 import com.zerobase.cms.user.domain.repository.CustomerRepository;
@@ -42,7 +43,7 @@ public class CustomerBalanceService {
                 .customer(customerBalanceHistory.getCustomer())
                 .build();
 
-        customerBalanceHistory.getCustomer().setBalance(customerBalanceHistory.getChangeMoney());
+        customerBalanceHistory.getCustomer().setBalance(customerBalanceHistory.getCurrentMoney());
 
         return customerBalanceHistoryRepository.save(customerBalanceHistory);
     }
