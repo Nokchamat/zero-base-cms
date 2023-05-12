@@ -21,7 +21,7 @@ public class SignUpController {
 
     @GetMapping("/customer/verify")
     public ResponseEntity<String> verifyCustomer(String email, String code) {
-        signUpApplication.cusomerVerify(email, code);
+        signUpApplication.customerVerify(email, code);
         return ResponseEntity.ok("인증이 완료되었습니다.");
     }
 
