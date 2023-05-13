@@ -2,6 +2,8 @@ package com.zerobase.cms.order.application;
 
 
 import com.zerobase.cms.order.client.UserClient;
+import com.zerobase.cms.order.client.mailgun.MailgunClient;
+import com.zerobase.cms.order.client.mailgun.SendMailForm;
 import com.zerobase.cms.order.client.user.ChangeBalanceForm;
 import com.zerobase.cms.order.client.user.CustomerDto;
 import com.zerobase.cms.order.domain.model.ProductItem;
@@ -22,6 +24,7 @@ public class OrderApplication {
     private final CartApplication cartApplication;
     private final UserClient userClient;
     private final ProductItemService productItemService;
+    private final MailgunClient mailgunClient;
 
     @Transactional
     public void order(String token, Cart cart) {
@@ -42,11 +45,6 @@ public class OrderApplication {
         }
 
 
-        System.out.println("=======================");
-        System.out.println("NO money 나옴");
-        System.out.println("=======================");
-        //no money 까지 지나오긴 함
-
         //롤백 계획에 대해서 생각해야 함.
         userClient.changeBalance(token,
                 ChangeBalanceForm.builder()
@@ -54,10 +52,16 @@ public class OrderApplication {
                         .message("Order")
                         .money(-totalPrice)
                         .build());
+        String customerEmail = userClient.getCustomerInfo(token).getBody().getEmail();
 
-        System.out.println("=======================");
-        System.out.println("changeBalance 지나옴");
-        System.out.println("=======================");
+        SendMailForm form = SendMailForm.builder()
+                .from("Commerce@naver.com")
+                .to(customerEmail)
+                .subject("Order List")
+                .text(cart.toString())
+                .build();
+
+        mailgunClient.sendEmail(form);
 
         for (Cart.Product product : orderCart.getProducts()) {
             for (Cart.ProductItem cartItem : product.getItems()) {
