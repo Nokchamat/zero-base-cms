@@ -19,5 +19,4 @@ public interface UserClient {
     ResponseEntity<Integer> changeBalance(@RequestHeader(name = "X-AUTH-TOKEN") String token,
                                               @RequestBody ChangeBalanceForm form);
 
-
 }
