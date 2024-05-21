@@ -33,9 +33,6 @@ public class Seller extends BaseEntity{
     private String verificationCode;
     private boolean verify;
 
-    @Column(columnDefinition = "int default 0")
-    private Integer balance;
-
     public static Seller from(SignUpForm form) {
         return Seller.builder()
                 .email(form.getEmail())

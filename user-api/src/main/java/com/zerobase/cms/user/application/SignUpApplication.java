@@ -12,7 +12,10 @@ import com.zerobase.cms.user.service.seller.SignUpSellerService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.RandomStringUtils;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+
+import java.time.LocalDateTime;
 
 @Slf4j
 @Service
@@ -22,7 +25,7 @@ public class SignUpApplication {
     private final SignUpCustomerService signUpCustomerService;
     private final SignUpSellerService signUpSellerService;
 
-    public void customerVerify(String email, String code){
+    public void cusomerVerify(String email, String code){
         signUpCustomerService.verifyEmail(email, code);
     }
 
