@@ -25,18 +25,19 @@ Content-Type: application/json
 ### 회원 정보 조회 ( 고객 )
 GET http://localhost:8081/customer/getInfo
 Content-Type: application/json
-X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJGTm1jTEZoaTBLQmpvd1FnOFl5M2VVclRqUlNOVlZPZ2J5eWdOeEdNMHpRPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiQ1VTVE9NRVIiLCJpYXQiOjE2ODM1MzQ4ODcsImV4cCI6MTY4MzYyMTI4N30.0BYblT41NiRx8cEXe9sJbs4JtKhL5vK1lAcW2o5fcSY
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJGTm1jTEZoaTBLQmpvd1FnOFl5M2VVclRqUlNOVlZPZ2J5eWdOeEdNMHpRPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiQ1VTVE9NRVIiLCJpYXQiOjE2ODM5NTk3MTgsImV4cCI6MTY4NDA0NjExOH0.z-9PZEt9atzI4yPP-ZL7lKoGEwdiGZEqCh0WtysgE9k
 
 ### 잔액 변경 ( 고객 )
 POST http://localhost:8081/customer/balance
 Content-Type: application/json
-X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJGTm1jTEZoaTBLQmpvd1FnOFl5M2VVclRqUlNOVlZPZ2J5eWdOeEdNMHpRPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiQ1VTVE9NRVIiLCJpYXQiOjE2ODM1MzQ4ODcsImV4cCI6MTY4MzYyMTI4N30.0BYblT41NiRx8cEXe9sJbs4JtKhL5vK1lAcW2o5fcSY
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJGTm1jTEZoaTBLQmpvd1FnOFl5M2VVclRqUlNOVlZPZ2J5eWdOeEdNMHpRPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiQ1VTVE9NRVIiLCJpYXQiOjE2ODM5NTk3MTgsImV4cCI6MTY4NDA0NjExOH0.z-9PZEt9atzI4yPP-ZL7lKoGEwdiGZEqCh0WtysgE9k
 
 {
   "from": "server",
   "message": "잔액 충전",
-  "money": 50000
+  "money": 100000
 }
+
 
 
 
@@ -62,6 +63,22 @@ POST http://localhost:8081/signin/seller
 Content-Type: application/json
 
 {
-  "email": "rkdtjd976@gmail.com",
+  "email": "rkd.tjd976@gmail.com",
   "password": "12341234"
+}
+
+### 회원 정보 조회 ( 고객 )
+GET http://localhost:8081/seller/getInfo
+Content-Type: application/json
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJGTm1jTEZoaTBLQmpvd1FnOFl5M2VVclRqUlNOVlZPZ2J5eWdOeEdNMHpRPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiQ1VTVE9NRVIiLCJpYXQiOjE2ODM5NTk3MTgsImV4cCI6MTY4NDA0NjExOH0.z-9PZEt9atzI4yPP-ZL7lKoGEwdiGZEqCh0WtysgE9k
+
+### 잔액 변경 ( 고객 )
+POST http://localhost:8081/seller/balance
+Content-Type: application/json
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJGTm1jTEZoaTBLQmpvd1FnOFl5M2VVclRqUlNOVlZPZ2J5eWdOeEdNMHpRPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiQ1VTVE9NRVIiLCJpYXQiOjE2ODM5NTk3MTgsImV4cCI6MTY4NDA0NjExOH0.z-9PZEt9atzI4yPP-ZL7lKoGEwdiGZEqCh0WtysgE9k
+
+{
+  "from": "server",
+  "message": "잔액 충전",
+  "money": 100000
 }

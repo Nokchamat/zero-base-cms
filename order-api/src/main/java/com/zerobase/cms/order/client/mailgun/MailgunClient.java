@@ -1,6 +1,5 @@
-package com.zerobase.cms.user.client;
+package com.zerobase.cms.order.client.mailgun;
 
-import com.zerobase.cms.user.client.mailgun.SendMailForm;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.cloud.openfeign.SpringQueryMap;
